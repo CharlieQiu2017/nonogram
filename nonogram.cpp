@@ -217,7 +217,7 @@ int main(int argc, char** argv){
 	if(board_status[i][j] != 0){continue;}
 	switch(buffer[j]){
 	case 0: {
-	  //cout << "Inconsistency found!" << endl;
+	  cout << "Inconsistency found!" << endl;
 	  if(recursion_depth == 0){return 0;}
 	  board_snapshot *last_snapshot = *(board_stack.rbegin());
 	  for(int k = 0;k < row;++k){
@@ -256,7 +256,7 @@ int main(int argc, char** argv){
 	if(board_status[j][i] != 0){continue;}
 	switch(buffer[j]){
 	case 0: {
-	  //cout << "Inconsistency found!" << endl;
+	  cout << "Inconsistency found!" << endl;
 	  if(recursion_depth == 0){return 0;}
 	  board_snapshot *last_snapshot = *(board_stack.rbegin());
 	  for(int k = 0;k < row;++k){
@@ -306,7 +306,7 @@ int main(int argc, char** argv){
     if(!completion_check){break;}
   }
   if(!completion_check){
-    //cout << "Assuming row " << prob_row << " column " << prob_col << " is filled" << endl;
+    cout << "Assuming row " << prob_row << " column " << prob_col << " is filled" << endl;
     ++recursion_depth;
     board_stack.push_back(new board_snapshot(board_status, row, col, prob_row, prob_col));
     board_status[prob_row][prob_col] = 1;
